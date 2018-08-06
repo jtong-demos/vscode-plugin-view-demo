@@ -1,0 +1,54 @@
+{
+    "name": "vscode-plugin-view-demo",
+    "displayName": "vscode-plugin-view-demo",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "jtong",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "tws-programs-view",
+                    "title": "TWS Explorer",
+                    "icon": "resources/school-flag.svg"
+                }
+            ]
+        },
+        "views": {
+            "tws-programs-view": [
+                {
+                    "id": "tws-programs-explorer",
+                    "name": "Explorer"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ]
+        
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
